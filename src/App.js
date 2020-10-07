@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ButtonAddPerson from "./components/ButtonAddPerson.js";
-import People from "./components/People.js";
+import ButtonAddPerson from "./components/ButtonAddPerson.js.js";
+import People from "./components/People.js.js";
 import { BrowserRouter as Router } from "react-router-dom";
-import Page from "./layouts/Page.js";
+import Page from "./layouts/Page.js.js";
 import Footer from "./layouts/Footer";
 import Header from "./layouts/Header";
 import "./styles/Header.css";
@@ -12,11 +12,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="app">
-          <Header />
-          {<Page />}
-          <Footer />
-        </div>
+        <div className="app"></div>
       </Router>
     );
   }
