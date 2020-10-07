@@ -1,24 +1,30 @@
-const ThrowBallButton = () => {
-  const fieldList = this.state.fields;
-  const pickedField = fieldList[Math.floor(Math.random() * fieldList.length)];
-  // console.log(pickedField.color + pickedField.id);
-  const fields = this.state.fields.map((field) => {
-    if (field.id === pickedField.id) {
-      field.ballOnField = true;
-    } else {
-      field.ballOnField = false;
-    }
-    return field;
-  });
-  this.setState({
-    fields,
-  });
-  const pickedField = () => {
-    fieldList[Math.floor(Math.random() * fieldList.length)];
-  };
-  const throwBall = () => {};
+import { connect } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import throwBall from "../actions/throwBall.js";
 
-  return <button onClick={() => throwBall()}> </button>;
+const ThrowBallButton = () => {
+  const fieldList = useSelector((state) => state.fields);
+  const dispatch = useDispatch();
+  const pickedField = (fieldList) => {
+    return fieldList[Math.floor(Math.random() * fieldList.length)];
+  };
+  const throwBall = () => {
+    const pickedField = pickedField(fieldList);
+    const fields = fieldList.map((field) => {
+      if (field.id == pickedField) {
+        field.ballOnFields = true;
+      }
+      return field;
+    });
+    dispatch(throwBall(fields));
+  };
+
+  return (
+    <button className="btn btn-primary" onClick={() => throwBall()}>
+      Throw Ball
+    </button>
+  );
 };
 
 export default ThrowBallButton;
