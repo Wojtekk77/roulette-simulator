@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import FieldOnBoard from "./FieldOnBoard.js";
 import "../../styles/RouletteBoard.css";
-import { throwBallAction } from "../../actions/throwBallAction";
-const RouletteBoard = () => {
+import { setBetAction } from "../../actions/setBetAction";
+import { connect } from "react-redux";
+const RouletteBoard = (props) => {
   const store = useSelector((state) => state);
+
   const dispatch = useDispatch();
+
   const handleClickField = (id, color, isBet) => {
     const fields = store.fields.map((field) => {
       if (field.id == id) {
@@ -13,10 +16,10 @@ const RouletteBoard = () => {
       }
       return field;
     });
-    dispatch(throwBallAction(fields));
+    dispatch(setBetAction(fields));
   };
 
-  const fields = store.fields.map((field) => (
+  const fields = props.fields.map((field) => (
     <FieldOnBoard
       key={field.id}
       number={field.id}
@@ -40,4 +43,18 @@ const RouletteBoard = () => {
   );
 };
 
-export default RouletteBoard;
+const mapStateToProps = (state) => ({
+  fields: state.fields,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // dispatching actions returned by action creators
+    // increment: () => dispatch(increment()),
+    // decrement: () => dispatch(decrement()),
+    // reset: () => dispatch(reset()),
+  };
+};
+
+export default connect(mapStateToProps, {})(RouletteBoard);
+// mapStateToProps pozwala nam połączyć się ze storem i przekazać to od razu do propsów

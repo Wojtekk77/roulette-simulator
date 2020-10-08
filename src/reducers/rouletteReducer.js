@@ -51,8 +51,7 @@ const initialState = {
 
 export const rouletteReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "THROW_BALL":
-      //   console.log("in peopleReduer", action);
+    case "SET_BET":
       return { ...state, fields: action.fields };
     case "GENERATE_NEW_PEOPLE":
       return { ...state, users: action.people, isLoaded: true };
