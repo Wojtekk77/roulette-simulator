@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
+import "../../styles/FieldOnBoard.css";
+import Ball from "./Ball";
+import BetOnBoard from "./BetOnBoard";
 const FieldOnBoard = (props) => {
   const myBetOnField = props.isBet ? "posRelative" : null;
   const ballOnField = props.ballOnField ? "ballOnField posRelative" : null;
@@ -8,15 +10,14 @@ const FieldOnBoard = (props) => {
 
   return (
     <>
-      {/* <div
+      <div
         onClick={props.click}
         className={`${props.color} field ${ballOnField} ${myBetOnField}`}
       >
         {props.number}
-        {ballOnField ? <Ball /> : null}
-        {myBetOnField ? <MyBet bid={props.bid} /> : null}
-      </div> */}
-      fieldOnBoard <br></br>
+        {/* {ballOnField ? <Ball /> : null} */}
+        {myBetOnField ? <BetOnBoard bid={props.bid} /> : null}
+      </div>
     </>
   );
 };

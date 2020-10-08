@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import throwBall from "../actions/throwBall.js.js";
+import { throwBall } from "../actions/throwBall.js";
 
 const ThrowBallButton = () => {
   const fieldList = useSelector((state) => state.fields);
