@@ -24,7 +24,6 @@ const RouletteBoard = (props) => {
       color={field.color}
       click={() => handleClickField(field.id)}
       isBet={field.Bid > 0}
->>>>>>> b4667eee4dd8d9dcdf4760bd3b3823ea0b4c930e
       ballOnField={field.ballOnField}
       Bid={field.Bid}
     />
@@ -52,11 +51,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-<<<<<<< HEAD
-    setBetOnField : (fields) => dispatch(setBetAction(fields)),
-=======
      setBetOnField: (fields) => dispatch(setBetAction(fields)),
->>>>>>> b4667eee4dd8d9dcdf4760bd3b3823ea0b4c930e
   };
 };
 
