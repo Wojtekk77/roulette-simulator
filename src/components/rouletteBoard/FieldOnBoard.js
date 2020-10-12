@@ -7,8 +7,9 @@ const FieldOnBoard = (props) => {
   const myBetOnField = props.isBet ? "posRelative" : null;
   const ballOnField = props.ballOnField ? "ballOnField posRelative" : null;
   const dispatch = useDispatch();
-
+ 
   return (
+    
     <>
       <div
         onClick={props.click}
@@ -16,7 +17,7 @@ const FieldOnBoard = (props) => {
       >
         {props.number}
         {/* {ballOnField ? <Ball /> : null} */}
-        {myBetOnField ? <BetOnBoard bid={props.bid} /> : null}
+        {myBetOnField ? <BetOnBoard Bid={props.Bid} /> : null}
       </div>
     </>
   );
