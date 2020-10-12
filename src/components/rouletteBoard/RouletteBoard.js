@@ -9,22 +9,32 @@ const RouletteBoard = (props) => {
 
   const dispatch = useDispatch();
 
-  const handleClickField = (id, color, isBet) => {
+  // const handleClickField = (id, color, isBet) => {
+  //   const fields = store.fields.map((field) => {
+  //     if (field.id == id) {
+  //       field.isBet = !isBet;
+  //     }
+  //     return field;
+  //   });
+  //   dispatch(setBetAction(fields));
+  // };
+
+  const handleClickField = (id, isBet) => {
     const fields = store.fields.map((field) => {
       if (field.id == id) {
         field.isBet = !isBet;
       }
       return field;
     });
-    dispatch(setBetAction(fields));
+    props.setBetOnField(fields)
   };
-
   const fields = props.fields.map((field) => (
     <FieldOnBoard
       key={field.id}
       number={field.id}
       color={field.color}
-      click={() => handleClickField(field.id, field.color, field.isBet)}
+      click={() => handleClickField(field.id, field.isBet)}
+      // click={() => handleClickField(field.id, field.color, field.isBet)}
       isBet={field.isBet}
       ballOnField={field.ballOnField}
     />
@@ -43,18 +53,15 @@ const RouletteBoard = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   fields: state.fields,
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // dispatching actions returned by action creators
-    // increment: () => dispatch(increment()),
-    // decrement: () => dispatch(decrement()),
-    // reset: () => dispatch(reset()),
+    setBetOnField : (fields) => dispatch(setBetAction(fields)),
   };
 };
 
-export default connect(mapStateToProps, {})(RouletteBoard);
+export default connect(mapStateToProps, mapDispatchToProps)(RouletteBoard);
 // mapStateToProps pozwala nam połączyć się ze storem i przekazać to od razu do propsów
