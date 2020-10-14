@@ -4,17 +4,9 @@ import {throwBallAction} from "../../actions/throwBallAction.js";
 
 const ThrowBallButton = (props) => {
   
-  const getWins = () => {};
+  const getWin = () => {};
 
   const throwBall = () => {
-    // const pickedField = props.fieldList[Math.floor(Math.random() * props.fieldList.length)]['id'];
-    // const fields = props.fieldList.map((field) => {
-    //   if (field.id == pickedField) {
-    //     field.ballOnField = true;
-    //   }else{field.ballOnField = false;}
-    //   return field;
-    // });
-    
     props.throwBall(props.fieldList);
   };
 

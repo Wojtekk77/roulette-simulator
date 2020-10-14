@@ -5,6 +5,7 @@ import { setBetAction } from "../../actions/setBetAction";
 import { connect } from "react-redux";
 import ClearFieldButton from "./ClearFieldButton";
 import ThrowBallButton from "./ThrowBallButton";
+import RouletteStatistics from "../statistics/RouletteStatistics.js";
 const RouletteBoard = (props) => {
  
   const handleClickField = (id) => {
@@ -32,6 +33,9 @@ const RouletteBoard = (props) => {
           <div className="col-md-4">
             <div className="board"><ClearFieldButton/></div>
             <div className="board"><ThrowBallButton/></div>
+          </div>
+          <div className="col-md-4">
+            <div className="board"><RouletteStatistics/></div>
           </div>
         </div>
       </div>

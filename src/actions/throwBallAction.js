@@ -4,6 +4,7 @@ export const throwBallAction = (fields) => {
   const fieldsNew = fields.map((field) => {
     if (field.id == pickedField) {
       field.ballOnField = true;
+      field.numOfSets++;
     }else{field.ballOnField = false;}
     return field;
   });
