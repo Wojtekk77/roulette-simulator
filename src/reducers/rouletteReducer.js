@@ -60,7 +60,8 @@ export const rouletteReducer = (state = initialState, action) => {
     case "CLEAR_BETS":
       return { ...state, fields: action.fields };
     case "SET_BALL_ON_FIELD":
-      console.log("SET_BALL_ON_FIELD");
+      return { ...state, fields: action.fields };
+    case "CLEAR_WIN_STATS":
       return { ...state, fields: action.fields };
     default:
       return state;

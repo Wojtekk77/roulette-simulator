@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import ClearFieldButton from "./ClearFieldButton";
 import ThrowBallButton from "./ThrowBallButton";
 import RouletteStatistics from "../statistics/RouletteStatistics.js";
+import ClearStatsButton from "../statistics/ClearStatsButton.js";
 const RouletteBoard = (props) => {
  
   const handleClickField = (id) => {
@@ -33,9 +34,11 @@ const RouletteBoard = (props) => {
           <div className="col-md-4">
             <div className="board"><ClearFieldButton/></div>
             <div className="board"><ThrowBallButton/></div>
+            <div className="board"><ClearStatsButton/></div>
           </div>
           <div className="col-md-4">
             <div className="board"><RouletteStatistics/></div>
+            
           </div>
         </div>
       </div>
