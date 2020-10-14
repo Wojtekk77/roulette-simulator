@@ -6,16 +6,16 @@ const NumOfSets = (props) => {
     
     return (
         <div className={props.field.color}>
-            {props.field.id} : {props.field.numOfSets}
+            {props.field.id} : {props.field.numOfSets} wins - {props.field.numOfWins} times
         </div>
     )
 }
 
 
-const mapStateToProps = (state, ownState) => {
-    return {fieldList : state.fields}
-    }
-    
+const mapStateToProps = (state, ownState) => ({
+      fieldList : state.fields
+    })
+
     const mapDispatchToProps = (dispatch) => {
       return {
         throwBall : (fields) => {dispatch(fields)}

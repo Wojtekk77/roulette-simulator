@@ -5,6 +5,7 @@ export const throwBallAction = (fields) => {
     if (field.id == pickedField) {
       field.ballOnField = true;
       field.numOfSets++;
+      if(field.Bid > 0){field.numOfWins ++}
     }else{field.ballOnField = false;}
     return field;
   });
