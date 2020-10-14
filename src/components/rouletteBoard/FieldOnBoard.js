@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { connect,useSelector, useDispatch } from "react-redux";
 import "../../styles/FieldOnBoard.css";
 import Ball from "./Ball";
 import BetOnBoard from "./BetOnBoard";
+import { setBetAction } from "../../actions/setBetAction.js";
 const FieldOnBoard = (props) => {
   const myBetOnField = props.isBet ? "posRelative" : null;
   const ballOnField = props.ballOnField ? "ballOnField posRelative" : null;
-  const dispatch = useDispatch();
- 
+  
   return (
     
     <>
@@ -16,11 +16,21 @@ const FieldOnBoard = (props) => {
         className={`${props.color} field ${ballOnField} ${myBetOnField}`}
       >
         {props.number}
-        {/* {ballOnField ? <Ball /> : null} */}
+        {ballOnField ? <Ball /> : null}
         {myBetOnField ? <BetOnBoard Bid={props.Bid} /> : null}
       </div>
     </>
   );
 };
 
-export default FieldOnBoard;
+const mapPropsToState = (state,ownState) => {
+  return {fields:state.fields}
+} 
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setBet : (fields) => dispatch(setBetAction(fields))
+  }
+}
+
+export default connect(mapPropsToState, mapDispatchToProps)(FieldOnBoard);

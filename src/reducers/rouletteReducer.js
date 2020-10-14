@@ -58,7 +58,9 @@ export const rouletteReducer = (state = initialState, action) => {
     case "DELETE_PERSON":
       return { ...state, users: action.people };
     case "CLEAR_BETS":
-      console.log("to dzialas?")
+      return { ...state, fields: action.fields };
+    case "SET_BALL_ON_FIELD":
+      console.log("SET_BALL_ON_FIELD");
       return { ...state, fields: action.fields };
     default:
       return state;

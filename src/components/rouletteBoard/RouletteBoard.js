@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import FieldOnBoard from "./FieldOnBoard.js";
 import "../../styles/RouletteBoard.css";
 import { setBetAction } from "../../actions/setBetAction";
 import { connect } from "react-redux";
-import ClearFieldButton from "./ClearFieldButton"
+import ClearFieldButton from "./ClearFieldButton";
+import ThrowBallButton from "./ThrowBallButton";
 const RouletteBoard = (props) => {
-  const store = useSelector((state) => state);
-
+ 
   const handleClickField = (id) => {
-    const fields = store.fields.map((field) => {
-      if (field.id == id) {
-        field.Bid = (field.Bid + 1) % 5;
-      }
-      return field;
-    });
-    props.setBetOnField(fields);
+    props.setBetOnField(props.fields,id);
   };
 
   const fields = props.fields.map((field) => (
@@ -39,6 +32,7 @@ const RouletteBoard = (props) => {
           </div>
           <div className="col-md-4">
             <div className="board"><ClearFieldButton/></div>
+            <div className="board"><ThrowBallButton/></div>
           </div>
         </div>
       </div>
@@ -52,7 +46,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-     setBetOnField: (fields) => dispatch(setBetAction(fields)),
+     setBetOnField: (fields,id) => dispatch(setBetAction(fields,id)),
   };
 };
 

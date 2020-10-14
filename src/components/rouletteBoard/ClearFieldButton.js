@@ -6,12 +6,7 @@ import { clearAllBetsAction } from '../../actions/clearAllBetsAction'
 const ClearFieldButton = (props) => {
 
     const handleClearBets = () => {
-        const clearedFields = props.fields.map((field) => 
-        {
-            field.Bid = 0
-            return  field
-        })
-        props.clearBets(clearedFields);
+        props.clearBets(props.fields);
     }
 
     return (

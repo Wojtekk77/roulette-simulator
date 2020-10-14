@@ -1,23 +1,21 @@
-import { connect } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch, connect } from "react-redux";
-import { throwBall } from "../actions/throwBall.js";
+import {throwBallAction} from "../../actions/throwBallAction.js";
 
 const ThrowBallButton = (props) => {
-  const dispatch = useDispatch();
   
-  const pickedField = (props.fieldList) => {
-    return fieldList[Math.floor(Math.random() * fieldList.length)];
-  };
+  const getWins = () => {};
+
   const throwBall = () => {
-    const pickedField = pickedField(fieldList);
-    const fields = fieldList.map((field) => {
-      if (field.id == pickedField) {
-        field.ballOnFields = true;
-      }
-      return field;
-    });
-    dispatch(throwBall(fields));
+    // const pickedField = props.fieldList[Math.floor(Math.random() * props.fieldList.length)]['id'];
+    // const fields = props.fieldList.map((field) => {
+    //   if (field.id == pickedField) {
+    //     field.ballOnField = true;
+    //   }else{field.ballOnField = false;}
+    //   return field;
+    // });
+    
+    props.throwBall(props.fieldList);
   };
 
   return (
@@ -33,7 +31,7 @@ return {fieldList : state.fields}
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    throwBall : () => {}
+    throwBall : (fields) => {dispatch(throwBallAction(fields))}
   }
 }
 
