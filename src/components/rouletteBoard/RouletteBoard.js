@@ -7,10 +7,11 @@ import ClearFieldButton from "./ClearFieldButton";
 import ThrowBallButton from "./ThrowBallButton";
 import RouletteStatistics from "../statistics/RouletteStatistics.js";
 import ClearStatsButton from "../statistics/ClearStatsButton.js";
+import SideFields from "./sideFields/SideFields.js";
 const RouletteBoard = (props) => {
- 
+
   const handleClickField = (id) => {
-    props.setBetOnField(props.fields,id);
+    props.setBetOnField(props.fields, id);
   };
   const fields = props.fields.map((field) => (
     <FieldOnBoard
@@ -26,19 +27,23 @@ const RouletteBoard = (props) => {
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container">
         <div className="row align-item-center">
-          <div className="col-md-4">
+          <div className="col-md-3 p-0 m-0">
             <div className="board">{fields}</div>
           </div>
-          <div className="col-md-4">
-            <div className="board"><ClearFieldButton/></div>
-            <div className="board"><ThrowBallButton/></div>
-            <div className="board"><ClearStatsButton/></div>
+          <div className="col-md-1 p-0 m-0">
+            <div className="board"><SideFields /></div>
           </div>
           <div className="col-md-4">
-            <div className="board"><RouletteStatistics/></div>
-            
+            <div className="board"><ClearFieldButton /></div>
+            <div className="board"><ThrowBallButton /></div>
+            <div className="board"><ClearStatsButton /></div>
+
+          </div>
+          <div className="col-md-4">
+            <div className="board"><RouletteStatistics /></div>
+
           </div>
         </div>
       </div>
@@ -52,7 +57,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-     setBetOnField: (fields,id) => dispatch(setBetAction(fields,id)),
+    setBetOnField: (fields, id) => dispatch(setBetAction(fields, id)),
   };
 };
 
