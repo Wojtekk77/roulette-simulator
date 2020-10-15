@@ -1,12 +1,33 @@
 export const clearAllBetsAction = (fields) => {
-  const clearedFields = fields.map((field) => 
-  {
-      field.Bid = 0
-      return  field
+  const clearedFields = fields.map((field) => {
+    field.Bid = 0
+    return field
   })
-    return {
-      type: "CLEAR_BETS",
-      fields : clearedFields 
-    };
+  return {
+    type: "CLEAR_BETS",
+    fields: clearedFields
   };
-  
+};
+
+export const clearColorBetsAction = (fields) => {
+  const clearedFields = fields.map((field) => {
+    field.Bid = 0
+    return field
+  })
+  return {
+    type: "CLEAR_BETS",
+    fields: clearedFields
+  };
+};
+
+
+export const clearPartialBetsAction = (fields) => {
+  const clearedFields = fields.map((field) => {
+    field.Bid = 0
+    return field
+  })
+  return {
+    type: "CLEAR_BETS",
+    fields: clearedFields
+  };
+};

@@ -23,12 +23,4 @@ export const ColorFields = (props) => {
 }
 
 
-
-const mapStateToProps = (state) => ({
-
-})
-
-const mapDispatchToProps = {
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ColorFields)
+export default ColorFields;

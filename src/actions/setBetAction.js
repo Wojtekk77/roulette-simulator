@@ -23,3 +23,16 @@ export const setBetColorAction = (fields, id) => {
     fields: fieldsNew,
   };
 };
+
+export const setBetPartialAction = (fields, id) => {
+  const fieldsNew = fields.map((field) => {
+    if (field.id == id) {
+      field.Bid = (field.Bid + 1) % 5;
+    }
+    return field;
+  });
+  return {
+    type: "SET_BET_PARTIAL",
+    fields: fieldsNew,
+  };
+};

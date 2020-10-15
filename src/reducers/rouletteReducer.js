@@ -55,6 +55,8 @@ export const rouletteReducer = (state = initialState, action) => {
       return { ...state, fields: action.fields };
     case "SET_BET_COLOR":
       return { ...state, colorFields: action.fields };
+    case "SET_BET_PARTIAL":
+      return { ...state, partialFields: action.fields };
 
     case "GENERATE_NEW_PEOPLE":
       return { ...state, users: action.people, isLoaded: true };

@@ -8,6 +8,7 @@ import ThrowBallButton from "./ThrowBallButton";
 import RouletteStatistics from "../statistics/RouletteStatistics.js";
 import ClearStatsButton from "../statistics/ClearStatsButton.js";
 import SideFields from "./sideFields/SideFields.js";
+import ClearSpecialBets from "./sideFields/ClearSpecialBets";
 const RouletteBoard = (props) => {
 
   const handleClickField = (id) => {
@@ -39,6 +40,7 @@ const RouletteBoard = (props) => {
             <div className="board"><ClearFieldButton /></div>
             <div className="board"><ThrowBallButton /></div>
             <div className="board"><ClearStatsButton /></div>
+            <div className="board"><ClearSpecialBets /></div>
 
           </div>
           <div className="col-md-4">

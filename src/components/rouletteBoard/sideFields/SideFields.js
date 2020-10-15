@@ -11,7 +11,7 @@ const SideFields = (props) => {
     };
 
     const handleClickPartialField = (id) => {
-        props.setBetColorField(props.partialFields, id);
+        props.setBetPartialField(props.partialFields, id);
     };
 
     //partialFields
@@ -42,7 +42,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     setBetColorField: (fields, id) => dispatch(setBetColorAction(fields, id)),
-    setBetPartialField: (fields, id) => dispatch(setBetColorAction(fields, id))
+    setBetPartialField: (fields, id) => dispatch(setBetPartialAction(fields, id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideFields)
