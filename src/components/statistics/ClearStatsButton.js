@@ -10,17 +10,17 @@ const ClearStatsButton = (props) => {
     }
 
     return (
-        <button onClick={handleClearStats} className="btn btn-warning">Clear Stats</button>    
+        <button onClick={handleClearStats} className="btn btn-danger">Clear Stats</button>
     )
 }
 
 const mapStateToProps = (state) => {
-    return { fields : state.fields  }
+    return { fields: state.fields }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {  
-        clearStats : (fields) => dispatch(clearStatsAction(fields)) 
+    return {
+        clearStats: (fields) => dispatch(clearStatsAction(fields))
     }
 }
 

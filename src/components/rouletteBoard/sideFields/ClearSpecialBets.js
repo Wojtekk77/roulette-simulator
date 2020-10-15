@@ -7,11 +7,12 @@ const ClearSpecialBets = (props) => {
 
     const handleClearBets = () => {
         props.clearColorBets(props.colorFields);
+        props.clearPartialBets(props.partialFields);
     }
 
     return (
         <div>
-            <button onClick={handleClearBets} className="btn btn-warning">Clear Bets</button>
+            <button onClick={handleClearBets} className="btn btn-warning">Clear Special Bets</button>
         </div>
     )
 }

@@ -15,7 +15,7 @@ export const clearColorBetsAction = (fields) => {
     return field
   })
   return {
-    type: "CLEAR_BETS",
+    type: "CLEAR_BETS_COLOR",
     fields: clearedFields
   };
 };
@@ -27,7 +27,7 @@ export const clearPartialBetsAction = (fields) => {
     return field
   })
   return {
-    type: "CLEAR_BETS",
+    type: "CLEAR_BETS_PARTIAL",
     fields: clearedFields
   };
 };

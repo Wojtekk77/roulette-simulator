@@ -11,18 +11,18 @@ const ClearFieldButton = (props) => {
 
     return (
         <div>
-            <button onClick={handleClearBets} className="btn btn-warning">Clear Bets</button>
+            <button onClick={handleClearBets} className="btn btn-warning">Clear Single Bets</button>
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
-    return { fields : state.fields  }
+    return { fields: state.fields }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {  
-        clearBets : (fields) => dispatch(clearAllBetsAction(fields)) 
+    return {
+        clearBets: (fields) => dispatch(clearAllBetsAction(fields))
     }
 }
 
