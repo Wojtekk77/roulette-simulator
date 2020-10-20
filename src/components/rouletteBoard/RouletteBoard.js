@@ -36,16 +36,15 @@ const RouletteBoard = (props) => {
           <div className="col-md-1 p-0 m-0">
             <div className="board"><SideFields /></div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-2">
             <div className="board"><ClearFieldButton /></div>
             <div className="board"><ThrowBallButton /></div>
             <div className="board"><ClearStatsButton /></div>
             <div className="board"><ClearSpecialBets /></div>
 
           </div>
-          <div className="col-md-4">
-            <div className="board"><RouletteStatistics /></div>
-
+          <div className="col-md-6">
+            <div className=""><RouletteStatistics /></div>
           </div>
         </div>
       </div>

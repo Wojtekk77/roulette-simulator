@@ -39,13 +39,13 @@ const initialState = {
     { id: 36, color: "red", Bid: 0, ballOnField: false, numOfSets: 0, numOfWins: 0 },
   ],
   colorFields: [
-    { id: 37, color: "black", Bid: 0, ballOnField: false, numOfSets: 0, numOfWins: 0 },
-    { id: 38, color: "red", Bid: 0, ballOnField: false, numOfSets: 0, numOfWins: 0 },
+    { id: 37, description: "black", color: "black", Bid: 0, ballOnField: false, numOfSets: 0, numOfWins: 0 },
+    { id: 38, description: "red", color: "red", Bid: 0, ballOnField: false, numOfSets: 0, numOfWins: 0 },
   ],
   partialFields: [
-    { id: 38, winFields: [1, 12], Bid: 0, ballOnField: false, numOfSets: 0, numOfWins: 0 },
-    { id: 39, winFields: [13, 24], Bid: 0, ballOnField: false, numOfSets: 0, numOfWins: 0 },
-    { id: 40, winFields: [25, 36], Bid: 0, ballOnField: false, numOfSets: 0, numOfWins: 0 },
+    { id: 38, description: "1-12", color: "green", winFields: [1, 12], Bid: 0, ballOnField: false, numOfSets: 0, numOfWins: 0 },
+    { id: 39, description: "13-24", color: "green", winFields: [13, 24], Bid: 0, ballOnField: false, numOfSets: 0, numOfWins: 0 },
+    { id: 40, description: "25-36", color: "green", winFields: [25, 36], Bid: 0, ballOnField: false, numOfSets: 0, numOfWins: 0 },
   ],
 };
 
@@ -69,7 +69,7 @@ export const rouletteReducer = (state = initialState, action) => {
     case "CLEAR_BETS":
       return { ...state, fields: action.fields };
     case "SET_BALL_ON_FIELD":
-      return { ...state, fields: action.fields };
+      return { ...state, fields: action.fields, partialFields: action.partialFields };
     case "CLEAR_WIN_STATS":
       return { ...state, fields: action.fields };
     default:
