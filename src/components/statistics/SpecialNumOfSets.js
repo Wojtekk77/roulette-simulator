@@ -7,7 +7,7 @@ const SpecialNumOfSets = (props) => {
 
     return (
         <div className={props.field.color}>
-            {props.field.description} : {props.field.numOfSets} wins - {props.field.numOfWins} times
+            {props.field.description} : {props.field.numOfSets} sets, {props.field.numOfWins} wins
         </div>
     )
 }

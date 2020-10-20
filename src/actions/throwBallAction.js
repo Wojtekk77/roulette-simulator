@@ -11,7 +11,6 @@ export const throwBallAction = (fields, colorFields, partialFields) => {
   });
 
   const partialFieldsNew = partialFields.map((field) => {
-    console.log(1 <= pickedField, pickedField <= 12, field.winFields[0], pickedField, pickedField, field.winFields[1], field.Bid > 0)
     if (1 <= pickedField && pickedField <= 12 && field.winFields[0] <= pickedField && pickedField <= field.winFields[1]) {
       field.numOfSets++;
       if (field.Bid > 0) { field.numOfWins++ };
@@ -27,9 +26,19 @@ export const throwBallAction = (fields, colorFields, partialFields) => {
     return field;
   });
 
+  const colorFieldsNew = colorFields.map((field) => {
+    if (fields[pickedField].color == field.color) {
+      field.numOfSets++;
+      if (field.Bid > 0) { field.numOfWins++ };
+    };
+
+    return field
+  });
+
   return {
     type: "SET_BALL_ON_FIELD",
     fields: fieldsNew,
     partialFields: partialFieldsNew,
+    colorFields: colorFieldsNew,
   };
 };

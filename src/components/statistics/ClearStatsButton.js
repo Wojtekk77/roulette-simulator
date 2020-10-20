@@ -6,7 +6,7 @@ import { clearStatsAction } from '../../actions/clearStatsAction';
 const ClearStatsButton = (props) => {
 
     const handleClearStats = () => {
-        props.clearStats(props.fields);
+        props.clearStats(props.fields, props.colorFields, props.partialFields);
     }
 
     return (
@@ -15,12 +15,16 @@ const ClearStatsButton = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    return { fields: state.fields }
+    return {
+        fields: state.fields,
+        colorFields: state.colorFields,
+        partialFields: state.partialFields
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        clearStats: (fields) => dispatch(clearStatsAction(fields))
+        clearStats: (fields, colorFields, partialFields) => dispatch(clearStatsAction(fields, colorFields, partialFields))
     }
 }
 

@@ -51,6 +51,7 @@ const initialState = {
 
 export const rouletteReducer = (state = initialState, action) => {
   switch (action.type) {
+
     case "SET_BET":
       return { ...state, fields: action.fields };
     case "SET_BET_COLOR":
@@ -69,9 +70,9 @@ export const rouletteReducer = (state = initialState, action) => {
     case "CLEAR_BETS":
       return { ...state, fields: action.fields };
     case "SET_BALL_ON_FIELD":
-      return { ...state, fields: action.fields, partialFields: action.partialFields };
+      return { ...state, fields: action.fields, partialFields: action.partialFields, colorFields: action.colorFields };
     case "CLEAR_WIN_STATS":
-      return { ...state, fields: action.fields };
+      return { ...state, fields: action.fields, partialFields: action.partialFields, colorFields: action.colorFields };
     default:
       return state;
   }
