@@ -5,34 +5,6 @@ import { throwBallAction } from "../../actions/throwBallAction"
 
 const StartSimulationButton = (props) => {
 
-    //     var Interval = setInterval(() => {
-    //         field = this.props.throwBall();
-    //         if (this.state.color === "") {
-    //         } else if (field.color === this.state.color) {
-    //             winInRow++;
-    //             wins++;
-    //             loseInRow = 0;
-    //         } else {
-    //             winInRow = 0;
-    //             loseInRow++;
-    //         }
-    //         i++;
-    //         if (longestLoseInRow < loseInRow) longestLoseInRow = loseInRow;
-    //         if (longestWinInRow < winInRow) longestWinInRow = winInRow;
-    //         this.setState({
-    //             wins,
-    //             winInRow,
-    //             loseInRow,
-    //             longestWinInRow,
-    //             longestLoseInRow,
-    //         });
-    //         if (i >= number || this.state.stopSimulation) {
-    //             clearInterval(Interval);
-    //         }
-    //     }, speed);
-    // };
-
-
     const handleStartSimulation = () => {
         var i = 0;
         var Interval = setInterval(() => {
