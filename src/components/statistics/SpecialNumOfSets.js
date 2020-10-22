@@ -7,7 +7,8 @@ const SpecialNumOfSets = (props) => {
 
     return (
         <div className={props.field.color}>
-            {props.field.description} : {props.field.numOfSets} sets, {props.field.numOfWins} wins
+            {props.field.id} : {props.field.numOfSets} sets, {props.field.numOfWins} wins, ibs: {props.field.intervalBetweenSets} ibw: {props.field.intervalBetweenWins}
+            {/* ibs we ask when last time the ball was on the field ||||| ibw we ask when we last time win on this field */}
         </div>
     )
 }

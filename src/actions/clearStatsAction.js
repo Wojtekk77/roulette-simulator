@@ -4,18 +4,24 @@ export const clearStatsAction = (fields, colorFields, partialFields) => {
   const clearedStatWins = fields.map((field) => {
     field.numOfWins = 0;
     field.numOfSets = 0;
+    field.intervalBetweenWins = 0;
+    field.intervalBetweenSets = 0;
     return field
   })
 
   const clearedColorStatWins = colorFields.map((field) => {
     field.numOfWins = 0;
     field.numOfSets = 0;
+    field.intervalBetweenWins = 0;
+    field.intervalBetweenSets = 0;
     return field
   })
 
   const clearedPartialStatWins = partialFields.map((field) => {
     field.numOfWins = 0;
     field.numOfSets = 0;
+    field.intervalBetweenWins = 0;
+    field.intervalBetweenSets = 0;
     return field
   })
 
