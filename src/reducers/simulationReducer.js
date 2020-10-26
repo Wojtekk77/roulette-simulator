@@ -5,7 +5,7 @@ const initialState = {
   };
   export const simulationReducer = (state = initialState, action) => {
     switch (action.type) {
-      case "TOGGLE-SIMULATION":
+    case "TOGGLE-SIMULATION":
         return { ...state, isSimulationActive:action.isSimulationActive };
       default:
         return state;
