@@ -16,9 +16,9 @@ const ClearStatsButton = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        fields: state.fields,
-        colorFields: state.colorFields,
-        partialFields: state.partialFields
+        fields: state.roulette.fields,
+        colorFields: state.roulette.colorFields,
+        partialFields: state.roulette.partialFields
     }
 }
 

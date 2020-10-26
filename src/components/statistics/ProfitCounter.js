@@ -12,7 +12,7 @@ const ProfitCounter = (props) => {
 
 
 const mapStateToProps = (state, ownState) => ({
-    fieldList: state.fields
+    fieldList: state.roulette.fields
 })
 
 const mapDispatchToProps = (dispatch) => {

@@ -14,6 +14,7 @@ const RouletteBoard = (props) => {
   const handleClickField = (id) => {
     props.setBetOnField(props.fields, id);
   };
+  
   const fields = props.fields.map((field) => (
     <FieldOnBoard
       key={field.id}
@@ -53,7 +54,7 @@ const RouletteBoard = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  fields: state.fields,
+  fields: state.roulette.fields,
 });
 
 const mapDispatchToProps = (dispatch) => {

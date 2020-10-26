@@ -15,9 +15,9 @@ const SpecialNumOfSets = (props) => {
 
 
 const mapStateToProps = (state, ownState) => ({
-    fieldList: state.fields,
-    colorFields: state.colorFields,
-    partialFields: state.partialFields
+    fieldList: state.roulette.fields,
+    colorFields: state.roulette.colorFields,
+    partialFields: state.roulette.partialFields
 })
 
 const mapDispatchToProps = (dispatch) => {

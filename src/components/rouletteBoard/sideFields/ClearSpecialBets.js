@@ -19,8 +19,8 @@ const ClearSpecialBets = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        colorFields: state.colorFields,
-        partialFields: state.partialFields
+        colorFields: state.roulette.colorFields,
+        partialFields: state.roulette.partialFields
     }
 }
 

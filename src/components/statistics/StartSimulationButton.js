@@ -10,22 +10,25 @@ const StartSimulationButton = (props) => {
         var Interval = setInterval(() => {
             props.startSimulation(props.fields, props.colorFields, props.partialFields);
             i++;
-            if (i > 500) {
+            if (i > 100) {
                 clearInterval(Interval);
             }
         })
     }
-
+   
     return (
+        <>
         <button onClick={handleStartSimulation} className="btn btn-danger">Start Simulation</button>
+        <button onClick={handleStartSimulation} className="btn btn-danger">Start Simulation</button>
+        </>
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        fields: state.fields,
-        colorFields: state.colorFields,
-        partialFields: state.partialFields
+        fields: state.roulette.fields,
+        colorFields: state.roulette.colorFields,
+        partialFields: state.roulette.partialFields
     }
 }
 

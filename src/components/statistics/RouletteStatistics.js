@@ -36,9 +36,9 @@ const RouletteStatistics = (props) => {
 
 const mapStateToProps = (state, ownState) => {
   return {
-    fieldList: state.fields,
-    colorFields: state.colorFields,
-    partialFields: state.partialFields
+    fieldList: state.roulette.fields,
+    colorFields: state.roulette.colorFields,
+    partialFields: state.roulette.partialFields
   }
 }
 

@@ -36,8 +36,8 @@ const SideFields = (props) => {
 
 
 const mapStateToProps = (state) => ({
-    colorFields: state.colorFields,
-    partialFields: state.partialFields
+    colorFields: state.roulette.colorFields,
+    partialFields: state.roulette.partialFields
 })
 
 const mapDispatchToProps = (dispatch) => ({

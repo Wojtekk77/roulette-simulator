@@ -17,7 +17,7 @@ const ClearFieldButton = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    return { fields: state.fields }
+    return { fields: state.roulette.fields }
 }
 
 const mapDispatchToProps = (dispatch) => {
