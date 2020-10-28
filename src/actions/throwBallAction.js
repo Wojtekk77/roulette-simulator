@@ -50,5 +50,6 @@ export const throwBallAction = (fields, colorFields, partialFields) => {
     fields: fieldsNew,
     partialFields: partialFieldsNew,
     colorFields: colorFieldsNew,
+    currentWinner:pickedField,
   };
 };
