@@ -3,12 +3,10 @@ import FieldOnBoard from "./FieldOnBoard.js";
 import "../../styles/RouletteBoard.css";
 import { setBetAction } from "../../actions/setBetAction";
 import { connect } from "react-redux";
-import ClearFieldButton from "./ClearFieldButton";
-import ThrowBallButton from "./ThrowBallButton";
+import ButtonsRoulette from "./ButtonsRoulette";
 import RouletteStatistics from "../statistics/RouletteStatistics.js";
-import ClearStatsButton from "../statistics/ClearStatsButton.js";
 import SideFields from "./sideFields/SideFields.js";
-import ClearSpecialBets from "./sideFields/ClearSpecialBets";
+
 const RouletteBoard = (props) => {
 
   const handleClickField = (id) => {
@@ -38,11 +36,7 @@ const RouletteBoard = (props) => {
             <div className="board"><SideFields /></div>
           </div>
           <div className="col-md-2">
-            <div className="board"><ClearFieldButton /></div>
-            <div className="board"><ThrowBallButton /></div>
-            <div className="board"><ClearStatsButton /></div>
-            <div className="board"><ClearSpecialBets /></div>
-
+            <ButtonsRoulette/>
           </div>
           <div className="col-md-6">
             <div className=""><RouletteStatistics /></div>

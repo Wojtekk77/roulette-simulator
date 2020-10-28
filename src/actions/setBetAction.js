@@ -1,7 +1,7 @@
 export const setBetAction = (fields, id) => {
   const fieldsNew = fields.map((field) => {
     if (field.id == id) {
-      field.Bid = (field.Bid + 1) % 5;
+      field.Bid = (field.Bid + 1) % 2;
     }
     return field;
   });
@@ -14,7 +14,7 @@ export const setBetAction = (fields, id) => {
 export const setBetColorAction = (fields, id) => {
   const fieldsNew = fields.map((field) => {
     if (field.id == id) {
-      field.Bid = (field.Bid + 1) % 5;
+      field.Bid = (field.Bid + 1) % 2;
     }
     return field;
   });
@@ -27,7 +27,7 @@ export const setBetColorAction = (fields, id) => {
 export const setBetPartialAction = (fields, id) => {
   const fieldsNew = fields.map((field) => {
     if (field.id == id) {
-      field.Bid = (field.Bid + 1) % 5;
+      field.Bid = (field.Bid + 1) % 2;
     }
     return field;
   });
