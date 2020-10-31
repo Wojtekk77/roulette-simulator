@@ -58,7 +58,6 @@ export const rouletteReducer = (state = initialState, action) => {
       return { ...state, colorFields: action.fields };
     case "SET_BET_PARTIAL":
       return { ...state, partialFields: action.fields };
-
     case "GENERATE_NEW_PEOPLE":
       return { ...state, users: action.people, isLoaded: true };
     case "DELETE_PERSON":
@@ -70,9 +69,10 @@ export const rouletteReducer = (state = initialState, action) => {
     case "CLEAR_BETS":
       return { ...state, fields: action.fields };
     case "SET_BALL_ON_FIELD":
-      return { ...state, fields: action.fields, partialFields: action.partialFields, colorFields: action.colorFields, };
+      return { ...state, fields: action.fields, partialFields: action.partialFields, colorFields: action.colorFields };
     case "CLEAR_WIN_STATS":
       return { ...state, fields: action.fields, partialFields: action.partialFields, colorFields: action.colorFields };
+
     default:
       return state;
   }

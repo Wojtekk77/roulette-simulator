@@ -4,6 +4,8 @@ const initialState = {
     numOfSimulations: 100,
     speedOfSimulationinMs: 100,
     setAlgorithm01:false,
+    totalWins:0,
+    totalBids:0, 
   };
   export const simulationReducer = (state = initialState, action) => {
     switch (action.type) {
