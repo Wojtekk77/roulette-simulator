@@ -4,6 +4,7 @@ import { throwBallAction } from './../../actions/throwBallAction'
 import {setBetColorAction} from './../../actions/setBetAction'
 import {clearColorBetsAction} from './../../actions/clearAllBetsAction'
 import { throwBallAlorithm01action } from '../../actions/throwBallAlorithm01action'
+import SimulationForm from './SimulationForm'
 const SetBetAlgorithm01 = (props) => {
 
     const colorChooser = (id) => {
@@ -16,33 +17,25 @@ const SetBetAlgorithm01 = (props) => {
     const handleSetAlgorithm01 = () => {
         var i = 0;
         var pickedField = 0;
-        var NumberOfBids = 0;
-        var NumberOfSetsOfBall = 0;
-        var TotalWinFromColor = 0;
-        var setsFieldColorList = [0]
-        var myListOfBets = []
-        // const color = props.fields[pickedField]['color'];
-        // console.log(pickedField,color)
         var Interval = setInterval(()=>{
-            
             props.clearColorBetsAction(props.colorFields);
-
             props.setBetOnColorField(props.colorFields,colorChooser(pickedField))
-            
             pickedField = props.fields[Math.floor(Math.random() * props.fields.length)]['id'];
             props.throwBallAlorithm01action(props.fields, props.colorFields, props.partialFields, pickedField)
-            
-            // console.log(colorChooser(pickedField) == props.fields[pickedField]['color']);
-
-        if (i >= 1000) { clearInterval(Interval)} 
+        if (i >= props.numOfSimulations) { clearInterval(Interval)} 
         i++;
         })
     }
   
     return (
+    <>
         <button className="btn btn-primary" onClick={handleSetAlgorithm01} >
-            Start Simulation with algorithm01 {props.currentWinner}
+            Start algorithm01
         </button>
+        <SimulationForm/>
+        <p>total bids:{props.totalBids}</p> <p>total wins: {props.totalWins}</p>
+        
+    </>
     )
     
 }
@@ -53,6 +46,9 @@ const mapStateToProps = (state) => ({
     partialFields : state.roulette.partialFields,
     setAlgorithm01 : state.simulation.setAlgorithm01,
     currentWinner : state.simulation.currentWinner,
+    totalBids: state.simulation.totalBids,
+    totalWins: state.simulation.totalWins,
+    numOfSimulations: state.simulation.numOfSimulations,
 })
 //chce aby po throw ball nastapilo wybranie czy wybieramy czerwone czy czarne
 const mapDispatchToProps = (dispatch) => { 
