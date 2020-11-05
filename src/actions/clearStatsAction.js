@@ -6,6 +6,8 @@ export const clearStatsAction = (fields, colorFields, partialFields) => {
     field.numOfSets = 0;
     field.intervalBetweenWins = 0;
     field.intervalBetweenSets = 0;
+    field.longestWithoutWin = 0;
+    field.longestWithoutSet = 0;
     return field
   })
 
@@ -14,6 +16,8 @@ export const clearStatsAction = (fields, colorFields, partialFields) => {
     field.numOfSets = 0;
     field.intervalBetweenWins = 0;
     field.intervalBetweenSets = 0;
+    field.longestWithoutWin = 0;
+    field.longestWithoutSet = 0;
     return field
   })
 
@@ -22,6 +26,8 @@ export const clearStatsAction = (fields, colorFields, partialFields) => {
     field.numOfSets = 0;
     field.intervalBetweenWins = 0;
     field.intervalBetweenSets = 0;
+    field.longestWithoutWin = 0;
+    field.longestWithoutSet = 0;
     return field
   })
 

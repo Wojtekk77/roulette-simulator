@@ -11,9 +11,6 @@ const SetBetAlgorithm01 = (props) => {
         if(props.fields[id]['color']=="green"){return 0}
         return props.fields[id]['color'] === "red" ? 38 : 37
     } 
-    const checkIfWin = (setId,choosenColorID) => {
-        
-    }
     const handleSetAlgorithm01 = () => {
         var i = 0;
         var pickedField = 0;
@@ -24,7 +21,7 @@ const SetBetAlgorithm01 = (props) => {
             props.throwBallAlorithm01action(props.fields, props.colorFields, props.partialFields, pickedField)
         if (i >= props.numOfSimulations) { clearInterval(Interval)} 
         i++;
-        })
+        },props.speedOfSimulationInMs)
     }
   
     return (
@@ -49,6 +46,7 @@ const mapStateToProps = (state) => ({
     totalBids: state.simulation.totalBids,
     totalWins: state.simulation.totalWins,
     numOfSimulations: state.simulation.numOfSimulations,
+    speedOfSimulationInMs: state.simulation.speedOfSimulationInMs,
 })
 //chce aby po throw ball nastapilo wybranie czy wybieramy czerwone czy czarne
 const mapDispatchToProps = (dispatch) => { 

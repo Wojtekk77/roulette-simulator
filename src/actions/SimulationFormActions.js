@@ -4,3 +4,11 @@ export const changeNumberOfSimulations = (numOfSimulations) => {
       numOfSimulations,
     };
   };
+
+  export const changeSpeedOfSimulations = (speedOfSimulationInMs) => {
+    return {
+      type: "CHANGE-SPEED-OF-SIMULATION",
+      speedOfSimulationInMs,
+    };
+  };
+  
