@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import ButtonsRoulette from "./ButtonsRoulette";
 import RouletteStatistics from "../statistics/RouletteStatistics.js";
 import SideFields from "./sideFields/SideFields.js";
+import PlotRedBlack from "../plots/PlotRedBlack";
 
 const RouletteBoard = (props) => {
 
@@ -40,6 +41,11 @@ const RouletteBoard = (props) => {
           </div>
           <div className="col-md-6">
             <div className=""><RouletteStatistics /></div>
+          </div>
+        </div>
+        <div className="row align-item-center">
+          <div class="col-md-12">
+            <PlotRedBlack/>
           </div>
         </div>
       </div>

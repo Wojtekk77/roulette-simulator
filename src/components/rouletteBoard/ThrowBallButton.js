@@ -7,7 +7,8 @@ const ThrowBallButton = (props) => {
   const getWin = () => { };
 
   const throwBall = () => {
-    props.throwBall(props.fieldList, props.colorFields, props.partialFields);
+    const pickedField = props.fieldList[Math.floor(Math.random() * props.fieldList.length)]['id'];
+    props.throwBallAction(props.fieldList, props.colorFields, props.partialFields, pickedField);
   };
 
   return (
@@ -27,7 +28,7 @@ const mapStateToProps = (state, ownState) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    throwBall: (fields, colorFields, partialFields) => { dispatch(throwBallAction(fields, colorFields, partialFields)) }
+    throwBallAction: (fields, colorFields, partialFields, pickedField) => { dispatch(throwBallAction(fields, colorFields, partialFields, pickedField)) }
   }
 }
 

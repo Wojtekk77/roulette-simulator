@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { throwBallAction } from './../../actions/throwBallAction' 
 import {setBetColorAction} from './../../actions/setBetAction'
 import {clearColorBetsAction} from './../../actions/clearAllBetsAction'
-import { throwBallAlorithm01action } from '../../actions/throwBallAlorithm01action'
 import SimulationForm from './SimulationForm'
 const SetBetAlgorithm01 = (props) => {
 
@@ -18,7 +17,7 @@ const SetBetAlgorithm01 = (props) => {
             props.clearColorBetsAction(props.colorFields);
             props.setBetOnColorField(props.colorFields,colorChooser(pickedField))
             pickedField = props.fields[Math.floor(Math.random() * props.fields.length)]['id'];
-            props.throwBallAlorithm01action(props.fields, props.colorFields, props.partialFields, pickedField)
+            props.throwBallAction(props.fields, props.colorFields, props.partialFields, pickedField)
         if (i >= props.numOfSimulations) { clearInterval(Interval)} 
         i++;
         },props.speedOfSimulationInMs)
@@ -54,7 +53,7 @@ const mapDispatchToProps = (dispatch) => {
         throwAlgorithm01 : (fields, colorFields, partialFields) => dispatch(throwBallAction(fields, colorFields, partialFields)),
         setBetOnColorField : (fields, id) => dispatch(setBetColorAction(fields, id)),
         clearColorBetsAction : (fields) => dispatch(clearColorBetsAction(fields)),
-        throwBallAlorithm01action : (fields, colorFields, partialFields, pickedField) =>dispatch(throwBallAlorithm01action(fields, colorFields, partialFields, pickedField))
+        throwBallAction : (fields, colorFields, partialFields, pickedField) =>dispatch(throwBallAction(fields, colorFields, partialFields, pickedField))
 }}
 
 export default connect(mapStateToProps, mapDispatchToProps)(SetBetAlgorithm01)
