@@ -9,11 +9,10 @@ import SideFields from "./sideFields/SideFields.js";
 import PlotRedBlack from "../plots/PlotRedBlack";
 
 const RouletteBoard = (props) => {
-
   const handleClickField = (id) => {
     props.setBetOnField(props.fields, id);
   };
-  
+
   const fields = props.fields.map((field) => (
     <FieldOnBoard
       key={field.id}
@@ -30,22 +29,26 @@ const RouletteBoard = (props) => {
     <>
       <div className="container">
         <div className="row align-item-center">
+          <div class="col-md-12">
+            <PlotRedBlack />
+          </div>
+        </div>
+        <div className="row align-item-center">
           <div className="col-md-3 p-0 m-0">
             <div className="board">{fields}</div>
           </div>
           <div className="col-md-1 p-0 m-0">
-            <div className="board"><SideFields /></div>
+            <div className="board">
+              <SideFields />
+            </div>
           </div>
           <div className="col-md-2">
-            <ButtonsRoulette/>
+            <ButtonsRoulette />
           </div>
           <div className="col-md-6">
-            <div className=""><RouletteStatistics /></div>
-          </div>
-        </div>
-        <div className="row align-item-center">
-          <div class="col-md-12">
-            <PlotRedBlack/>
+            <div className="">
+              <RouletteStatistics />
+            </div>
           </div>
         </div>
       </div>
