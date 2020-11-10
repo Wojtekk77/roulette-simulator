@@ -1,0 +1,8 @@
+.relative-plot {
+  position: relative;
+}
+
+.absolute-plot,
+.rv-xy-canvas {
+  position: absolute;
+}

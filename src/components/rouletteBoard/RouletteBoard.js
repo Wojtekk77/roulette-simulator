@@ -28,11 +28,7 @@ const RouletteBoard = (props) => {
   return (
     <>
       <div className="container">
-        <div className="row align-item-center">
-          <div class="col-md-12">
-            <PlotRedBlack />
-          </div>
-        </div>
+        <PlotRedBlack />
         <div className="row align-item-center">
           <div className="col-md-3 p-0 m-0">
             <div className="board">{fields}</div>
